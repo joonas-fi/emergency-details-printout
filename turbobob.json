@@ -1,0 +1,38 @@
+{
+	"for_description_of_this_file_see": "https://github.com/function61/turbobob",
+	"version_major": 1,
+	"project_name": "emergency-details-printout",
+	"builders": [
+		{
+			"name": "default",
+			"uses": "docker://fn61/buildkit-golang:20210208_0951_8496e47f",
+			"commands": {
+				"build": ["bin/build.sh"],
+				"dev": ["bash"]
+			},
+			"dev_http_ingress": "80",
+			"mount_destination": "/workspace",
+			"dev_shell_commands": [
+				{ "command": "source credentials.env", "important": true },
+				{ "command": "rel/emergency-details-printout_linux-amd64" }
+			],
+			"workdir": "/workspace"
+		},
+		{
+			"name": "publisher",
+			"uses": "docker://fn61/buildkit-publisher:20200228_1755_83c203ff",
+			"mount_destination": "/workspace",
+			"commands": {
+				"publish": ["publish-gh.sh", "joonas-fi/emergency-details-printout", "rel/"],
+				"dev": ["bash"]
+			},
+			"pass_envs": [
+				"GITHUB_TOKEN",
+				"EVENTHORIZON"
+			]
+		}
+	],
+	"os_arches": {
+		"linux-amd64": true
+	}
+}

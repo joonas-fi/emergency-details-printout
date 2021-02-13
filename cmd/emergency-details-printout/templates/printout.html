@@ -1,0 +1,103 @@
+<!doctype html>
+
+<head>
+	<title>{{.TrInCaseOfEmergency}}</title>
+	<meta charset="utf-8" />
+	<style>
+	th {
+		text-align: right;
+		padding-right: 3mm;
+	}
+
+	.credits {
+		color: #c0c0c0;
+	}
+
+	/* for twemoji hack */
+	img.emoji {
+	   height: 1em;
+	   width: 1em;
+	   margin: 0 .05em 0 .1em;
+	   vertical-align: -0.1em;
+	}
+	</style>
+	<!--
+		because html2pdf uses wkhtml2pdf which doesn't support newest emojis
+		https://github.com/wkhtmltopdf/wkhtmltopdf/issues/2913#issuecomment-443175335
+	-->
+	<script src="https://twemoji.maxcdn.com/2/twemoji.min.js?11.2"></script>
+	<script>window.onload = function () { twemoji.parse(document.body);}</script>
+</head>
+<body>
+
+<h1 style="text-align: center;">{{.TrInCaseOfEmergency}}</h1>
+
+<table>
+	{{if .EmergencyNumber}}
+	<tr>
+		<th>{{.TrEmergencyNumber}} ☎️</th>
+		<td>{{.EmergencyNumber}}</td>
+	</tr>
+	{{end}}
+	{{if .Address}}
+	<tr>
+		<th>{{.TrAddress}} 🏠</th>
+		<td>{{.Address}}</td>
+	</tr>
+	{{end}}
+	{{if .Fire}}
+	<tr>
+		<th>{{.TrFire}} 🔥</th>
+		<td>{{.Fire}}</td>
+	</tr>
+	{{end}}
+	{{if .Bleeding}}
+	<tr>
+		<th>{{.TrBleeding}} 🩸</th>
+		<td>{{.Bleeding}}</td>
+	</tr>
+	{{end}}
+	<tr>
+		<th>{{.TrResuscitationAdult}} ❤️</th>
+		<td>{{.TrResuscitationAdultInstructions}}</td>
+	</tr>
+	{{if .WaterLeak}}
+	<tr>
+		<th>{{.TrWaterLeak}} 🌊</th>
+		<td>{{.WaterLeak}}</td>
+	</tr>
+	{{end}}
+	{{if .MaintenanceCompany}}
+	<tr>
+		<th>{{.TrMaintenanceCompany}} 🔨</th>
+		<td>{{.MaintenanceCompany}}</td>
+	</tr>
+	{{end}}
+	{{if .Veterinarian}}
+	<tr>
+		<th>{{.TrVeterinarian}} 🐕</th>
+		<td>{{.Veterinarian}}</td>
+	</tr>
+	{{end}}
+</table>
+
+<!-- the below URLs need to be absolute, because a PDF is rendered from different context -->
+
+<center>
+	{{if .ResuscitationPrint}}
+	<hr/><img src="https://joonas.fi/emergency-details-printout/assets/resuscitation.png" />
+	{{end}}
+
+	{{if .HeimlichPrint}}
+	<hr/><img src="https://joonas.fi/emergency-details-printout/assets/heimlich.png" />
+	{{end}}
+</center>
+
+<p class="credits">
+	{{.TrInformationUpToDateChecked}}: {{.TodaysDate}}
+	<br/>
+	{{.TrMadeWith}}
+</p>
+
+</body>
+</html>
