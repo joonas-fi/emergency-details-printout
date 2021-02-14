@@ -68,6 +68,8 @@ func newServerHandler() (http.Handler, error) {
 		return nil, err
 	}
 
+	// this HTTP app lives under https://joonas.fi/emergency-details-printout/ (thus the fixed prefix)
+
 	// TODO: for safety, don't allow users to see the HTML (image sources etc.)
 	mux.HandleFunc("/emergency-details-printout/generate", func(w http.ResponseWriter, r *http.Request) {
 		html := printoutHtmlFromRequest(w, r, printoutTpl)
