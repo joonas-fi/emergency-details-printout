@@ -87,6 +87,12 @@ func newServerHandler() (http.Handler, error) {
 				return
 			}
 
+			if r.PostForm.Get("pdf_attachment") != "" {
+				w.Header().Set("Content-Disposition", `attachment; filename="emergency-details-printout.pdf"`)
+			} else {
+				w.Header().Set("Content-Disposition", "inline")
+			}
+
 			w.Header().Set("Content-Type", "application/pdf")
 			_, _ = io.Copy(w, pdf)
 		}
