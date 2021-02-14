@@ -1,5 +1,4 @@
 ![Build status](https://github.com/joonas-fi/emergency-details-printout/workflows/Build/badge.svg)
-[![Download](https://img.shields.io/github/downloads/joonas-fi/emergency-details-printout/total.svg?style=for-the-badge)](https://github.com/joonas-fi/emergency-details-printout/releases)
 
 [Website](https://joonas.fi/emergency-details-printout/) for printing an "emergency details" paper
 for helping deal with situations that need quick attention .
