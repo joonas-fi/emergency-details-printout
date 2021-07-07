@@ -12,6 +12,8 @@ type Translated struct {
 	TrMaintenanceCompany             string
 	TrVeterinarian                   string
 	TrInformationUpToDateChecked     string
+	Tr5BackBlows                     string
+	Tr5AbdominalThrusts              string
 	TrMadeWith                       string
 	TrTranslatorCredit               string // currently not shown
 }
@@ -33,6 +35,8 @@ var englishPhrases = Translated{
 	TrMaintenanceCompany:             "Maintenance company",
 	TrVeterinarian:                   "Veterinarian",
 	TrInformationUpToDateChecked:     "Information up-to-date checked",
+	Tr5BackBlows:                     "Give 5 back blows",
+	Tr5AbdominalThrusts:              "Give 5 abdominal thrusts",
 	TrMadeWith:                       "Create & customize your own: joonas.fi/emergency-details-printout",
 	TrTranslatorCredit:               "Joonas Loppi", // put your (the translatosr's) name, Twitter handle or website here
 }
@@ -51,6 +55,8 @@ var translations = map[string]Translated{
 		TrMaintenanceCompany:             "Huoltoyhtiö",
 		TrVeterinarian:                   "Eläinlääkäri",
 		TrInformationUpToDateChecked:     "Ajantasaisuus tarkistettu",
+		Tr5BackBlows:                     "Kämmenellä 5 kertaa lapaluiden väliin",
+		Tr5AbdominalThrusts:              "5 vetoa ylävatsan kohdalta",
 		TrMadeWith:                       "Tee & muokkaa itsellesi oma: joonas.fi/emergency-details-printout",
 		TrTranslatorCredit:               "Joonas Loppi",
 	},

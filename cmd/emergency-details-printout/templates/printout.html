@@ -20,6 +20,10 @@
 	   margin: 0 .05em 0 .1em;
 	   vertical-align: -0.1em;
 	}
+
+	table.heimlich td {
+		text-align:  center;
+	}
 	</style>
 	<!--
 		because html2pdf uses wkhtml2pdf which doesn't support newest emojis
@@ -89,7 +93,13 @@
 	{{end}}
 
 	{{if .HeimlichPrint}}
-	<hr/><img src="https://joonas.fi/emergency-details-printout/assets/heimlich.png" />
+	<hr/>
+	<table class="heimlich"><tr>
+		<td><strong style="font-size: 1.35rem">{{.Tr5BackBlows}}</strong></td>
+		<td>&nbsp; &nbsp; &nbsp; &nbsp;</td>
+		<td><strong style="font-size: 1.35rem">{{.Tr5AbdominalThrusts}}</strong></td>
+	</tr></table>
+	<img src="https://joonas.fi/emergency-details-printout/assets/heimlich.png" />
 	{{end}}
 </center>
 
