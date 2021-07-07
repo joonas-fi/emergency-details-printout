@@ -12,6 +12,7 @@ type Translated struct {
 	TrMaintenanceCompany             string
 	TrVeterinarian                   string
 	TrInformationUpToDateChecked     string
+	TrContactDetails                 string
 	Tr5BackBlows                     string
 	Tr5AbdominalThrusts              string
 	TrMadeWith                       string
@@ -35,6 +36,7 @@ var englishPhrases = Translated{
 	TrMaintenanceCompany:             "Maintenance company",
 	TrVeterinarian:                   "Veterinarian",
 	TrInformationUpToDateChecked:     "Information up-to-date checked",
+	TrContactDetails:                 "Contact details",
 	Tr5BackBlows:                     "Give 5 back blows",
 	Tr5AbdominalThrusts:              "Give 5 abdominal thrusts",
 	TrMadeWith:                       "Create & customize your own: joonas.fi/emergency-details-printout",
@@ -55,6 +57,7 @@ var translations = map[string]Translated{
 		TrMaintenanceCompany:             "Huoltoyhtiö",
 		TrVeterinarian:                   "Eläinlääkäri",
 		TrInformationUpToDateChecked:     "Ajantasaisuus tarkistettu",
+		TrContactDetails:                 "Yhteystiedot",
 		Tr5BackBlows:                     "Kämmenellä 5 kertaa lapaluiden väliin",
 		Tr5AbdominalThrusts:              "5 vetoa ylävatsan kohdalta",
 		TrMadeWith:                       "Tee & muokkaa itsellesi oma: joonas.fi/emergency-details-printout",

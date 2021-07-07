@@ -83,6 +83,24 @@
 		<td>{{.Veterinarian}}</td>
 	</tr>
 	{{end}}
+	{{if .Contact1}}
+	<tr>
+		<th>{{.TrContactDetails}} 📞</th>
+		<td>{{.Contact1}}</td>
+	</tr>
+	{{if .Contact2}}
+	<tr>
+		<th></th>
+		<td>{{.Contact2}}</td>
+	</tr>
+	{{end}}
+	{{if .Contact3}}
+	<tr>
+		<th></th>
+		<td>{{.Contact3}}</td>
+	</tr>
+	{{end}}
+	{{end}}
 </table>
 
 <!-- the below URLs need to be absolute, because a PDF is rendered from different context -->

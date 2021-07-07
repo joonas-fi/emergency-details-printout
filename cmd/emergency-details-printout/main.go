@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"embed"
+	"fmt"
 	"io"
 	"net/http"
 	"text/template"
@@ -127,6 +128,17 @@ func printoutHtmlFromRequest(w http.ResponseWriter, r *http.Request, printoutTpl
 		return r.PostForm.Get(key)
 	}
 
+	contactGet := func(keyPrefix string) string { // helper
+		label := formGet(keyPrefix + "label")
+		value := formGet(keyPrefix + "value")
+
+		if label != "" && value != "" {
+			return fmt.Sprintf("%s: %s", label, value) // "Bob: +1 206 555 0345"
+		} else {
+			return ""
+		}
+	}
+
 	details := struct {
 		Translated         // for convenience, embed
 		EmergencyNumber    string
@@ -136,6 +148,9 @@ func printoutHtmlFromRequest(w http.ResponseWriter, r *http.Request, printoutTpl
 		WaterLeak          string
 		MaintenanceCompany string
 		Veterinarian       string
+		Contact1           string
+		Contact2           string
+		Contact3           string
 		ResuscitationPrint bool
 		HeimlichPrint      bool
 		TodaysDate         string
@@ -148,6 +163,9 @@ func printoutHtmlFromRequest(w http.ResponseWriter, r *http.Request, printoutTpl
 		WaterLeak:          formGet("waterLeak"),
 		MaintenanceCompany: formGet("maintenanceCompany"),
 		Veterinarian:       formGet("veterinarian"),
+		Contact1:           contactGet("contact1"),
+		Contact2:           contactGet("contact2"),
+		Contact3:           contactGet("contact3"),
 		HeimlichPrint:      formGet("heimlich") != "",
 		ResuscitationPrint: formGet("resuscitation") != "",
 		TodaysDate:         time.Now().UTC().Format("2006-01-02"),
