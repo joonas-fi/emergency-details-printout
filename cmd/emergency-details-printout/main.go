@@ -17,6 +17,8 @@ import (
 	"github.com/function61/html2pdf/pkg/html2pdfclient"
 )
 
+// Embed so we can get truly no-dependencies binary (makes also Lambda deployment simpler)
+
 //go:embed assets/*
 var assetsFiles embed.FS
 
@@ -24,6 +26,7 @@ var assetsFiles embed.FS
 var templates embed.FS
 
 func main() {
+	// "hybrid" app, works both locally in Lambda as a HTTP server
 	if lambdautils.InLambda() {
 		handler, err := newServerHandler()
 		osutil.ExitIfError(err)
