@@ -63,4 +63,22 @@ var translations = map[string]Translated{
 		TrMadeWith:                       "Tee & muokkaa itsellesi oma: joonas.fi/emergency-details-printout",
 		TrTranslatorCredit:               "Joonas Loppi",
 	},
+	"zh-CN": {
+		TrInCaseOfEmergency:              "如果发生紧急情况",
+		TrEmergencyNumber:                "紧急号码",
+		TrAddress:                        "地址",
+		TrFire:                           "火灾",
+		TrBleeding:                       "受伤",
+		TrResuscitationAdult:             "心肺复苏（成年人）",
+		TrResuscitationAdultInstructions: "按压 30 次，吹气 2 次（夹住对方鼻子）。按压频率：2 次/秒",
+		TrWaterLeak:                      "漏水",
+		TrMaintenanceCompany:             "物业",
+		TrVeterinarian:                   "兽医",
+		TrInformationUpToDateChecked:     "信息更新时间",
+		TrContactDetails:                 "联系方式",
+		Tr5BackBlows:                     "拍击背部 5 次",
+		Tr5AbdominalThrusts:              "冲击腹部 5 次",
+		TrMadeWith:                       "创建并定制一份属于你的：joonas.fi/emergency-details-printout",
+		TrTranslatorCredit:               "RainSlide",
+	}
 }
