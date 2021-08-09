@@ -80,5 +80,5 @@ var translations = map[string]Translated{
 		Tr5AbdominalThrusts:              "冲击腹部 5 次",
 		TrMadeWith:                       "创建并定制一份属于你的：joonas.fi/emergency-details-printout",
 		TrTranslatorCredit:               "RainSlide",
-	}
+	},
 }
