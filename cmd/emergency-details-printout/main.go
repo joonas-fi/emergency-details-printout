@@ -45,8 +45,9 @@ func serve(ctx context.Context) error {
 	}
 
 	srv := &http.Server{
-		Addr:    ":80",
-		Handler: handler,
+		Addr:              ":80",
+		Handler:           handler,
+		ReadHeaderTimeout: httputils.DefaultReadHeaderTimeout, // mitigate slowrosis
 	}
 
 	return httputils.CancelableServer(ctx, srv, func() error { return srv.ListenAndServe() })
