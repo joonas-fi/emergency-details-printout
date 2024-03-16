@@ -40,7 +40,7 @@ var englishPhrases = Translated{
 	Tr5BackBlows:                     "Give 5 back blows",
 	Tr5AbdominalThrusts:              "Give 5 abdominal thrusts",
 	TrMadeWith:                       "Create & customize your own: joonas.fi/emergency-details-printout",
-	TrTranslatorCredit:               "Joonas Loppi", // put your (the translatosr's) name, Twitter handle or website here
+	TrTranslatorCredit:               "https://joonas.fi/", // put your (the translator's) name, Twitter handle or website here
 }
 
 var translations = map[string]Translated{
@@ -61,7 +61,7 @@ var translations = map[string]Translated{
 		Tr5BackBlows:                     "Kämmenellä 5 kertaa lapaluiden väliin",
 		Tr5AbdominalThrusts:              "5 vetoa ylävatsan kohdalta",
 		TrMadeWith:                       "Tee & muokkaa itsellesi oma: joonas.fi/emergency-details-printout",
-		TrTranslatorCredit:               "Joonas Loppi",
+		TrTranslatorCredit:               "https://joonas.fi/",
 	},
 	"zh-CN": {
 		TrInCaseOfEmergency:              "如果发生紧急情况",
