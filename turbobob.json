@@ -6,9 +6,9 @@
 	"builders": [
 		{
 			"name": "default",
-			"uses": "docker://fn61/buildkit-golang:20210702_0854_7adda4a2",
+			"uses": "docker://fn61/buildkit-golang:20240219_1236_e21b85ec",
 			"commands": {
-				"build": ["bin/build.sh"],
+				"build": ["build-go-project.sh", "--directory=cmd/emergency-details-printout/", "--binary-basename=emergency-details-printout", "--aws-lambda-zip"],
 				"dev": ["bash"]
 			},
 			"dev_http_ingress": "80",
